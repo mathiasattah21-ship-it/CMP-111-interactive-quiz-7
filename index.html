@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <title>CMP111 Interactive Quiz</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="quiz-app">
+    <header>
+      <div class="progress-container">
+        <div class="progress-label accent"><span id="current-q">1</span> / <span id="total-q">200</span></div>
+        <div class="progress-bar">
+          <div class="progress-bar-inner" id="progress-bar-inner"></div>
+        </div>
+        <div class="score-track">
+          <span class="accent">Answered:</span> <b id="answered-count">0</b> | 
+          <span class="accent">Correct:</span> <b id="correct-count">0</b>
+        </div>
+      </div>
+    </header>
+
+    <main id="main-game">
+      <div class="section-label accent" id="section-label"></div>
+      <div class="question-block">
+        <div class="question-text" id="question-text"></div>
+        <div class="options" id="option-list"></div>
+        <div class="explanation-box" id="explanation-box"></div>
+        <button id="next-btn" style="display:none;">Next</button>
+      </div>
+    </main>
+
+    <div class="dot-nav" id="dot-nav"></div>
+
+    <div id="results-modal" class="modal">
+      <div class="results-content">
+        <div class="score-ring-wrap">
+          <canvas id="score-ring" width="120" height="120"></canvas>
+          <div class="score-center" id="score-center"></div>
+        </div>
+        <div class="results-label" id="results-label"></div>
+        <div id="breakdown-bars"></div>
+        <button id="review-btn">Review Answers</button>
+        <button id="retake-btn">Retake Quiz</button>
+      </div>
+    </div>
+
+    <div id="review-modal" class="modal">
+      <div class="review-content">
+        <div id="review-header"></div>
+        <div class="question-block">
+          <div class="question-text" id="review-question"></div>
+          <div class="options" id="review-options"></div>
+          <div class="explanation-box" id="review-explanation"></div>
+        </div>
+        <div class="review-controls">
+          <button id="review-prev">Previous</button>
+          <button id="review-next">Next</button>
+          <button id="review-exit">Exit Review</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
